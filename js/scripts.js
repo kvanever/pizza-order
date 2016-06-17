@@ -6,7 +6,8 @@ $(document).ready(function(){
 
   $("#order-now").click(function(){
     debugger;
-    var newPizza = new Pizza()
+    var size = 
+    var newPizza = new Pizza(size)
     var pizzaReceipt = newPizza.order();
     $('#pizza-receipt').text(pizzaReceipt.size);
   });
@@ -14,8 +15,8 @@ $(document).ready(function(){
 
 // Business rules for ordering pizza
 
-var Pizza = function () {
-  this.size = "medium";
+var Pizza = function (size) {
+  this.size = "size";
 }
 
 Pizza.prototype.order = function () {
