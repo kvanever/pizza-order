@@ -1,1 +1,18 @@
 /*This file is for your custom css.  All yours*/
+input.size {
+  visibility: hidden;
+  position: absolute;
+}
+input.size {
+  cursor:pointer;
+  border:2px solid transparent;
+}
+
+
+input.size:checked + h3 {
+  text-decoration: underline;
+  background-color: #ccddff;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  padding: .25em;
+}

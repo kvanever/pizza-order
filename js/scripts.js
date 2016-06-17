@@ -23,6 +23,7 @@ $(document).ready(function(){
 var Pizza = function (size, toppings, price) {
   this.size = size;
   this.toppings = toppings;
+  this.toppings.push("cheese");
 }
 
 Pizza.prototype.price = function (size, toppings) {
