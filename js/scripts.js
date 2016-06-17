@@ -15,7 +15,7 @@ $(document).ready(function(){
     var pizzaReceipt = newPizza.order();
     $('#pizza-receipt').append("<p>" + pizzaReceipt.size + "</p>");
     $('#pizza-receipt').append("<p>" + pizzaReceipt.toppings + "</p>");
-    $('#pizza-receipt').append("<p>" + pizzaReceipt.price + "</p>");
+    $('#pizza-receipt').append("<p>" + pizzaReceipt.price(size) + "</p>");
     })
   });
 
@@ -24,7 +24,18 @@ $(document).ready(function(){
 var Pizza = function (size, toppings, price) {
   this.size = size;
   this.toppings = toppings;
-  this.price = 15
+}
+
+Pizza.prototype.price = function (size) {
+  debugger;
+  if (size === "large") {
+    this.price = 20
+  } else if (size === "medium") {
+    this.price = 15
+  } else if (size === "small") {
+    this.price = 10
+  }
+  return this.price;
 }
 
 Pizza.prototype.order = function () {
