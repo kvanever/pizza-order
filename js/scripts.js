@@ -10,11 +10,8 @@ $(document).ready(function(){
       return $(this).val();
     }).get();
     var newPizza = new Pizza(size, toppings)
-    var pizzaReceipt = newPizza.order();
-    $('#pizza-receipt').append("<p>Thank you for your order.</p><p>You selected a " + pizzaReceipt.size + " pizza with " + pizzaReceipt.toppings.join(' and ') + " for a grand total of $" + pizzaReceipt.price(size, toppings) + ".</p>")
-    // $('#pizza-receipt').append("<p>" + pizzaReceipt.size + "</p>");
-    // $('#pizza-receipt').append("<p>" + pizzaReceipt.toppings + "</p>");
-    // $('#pizza-receipt').append("<p>" + pizzaReceipt.price(size, toppings) + "</p>");
+    $('#pizza-receipt').html("")
+    $('#pizza-receipt').append("<p>Thank you for your order.</p><p>You selected a " + newPizza.size + " pizza with " + newPizza.toppings.join(' and ') + " for a grand total of $" + newPizza.price(size, toppings) + ".</p>")
     })
   });
 
@@ -42,8 +39,4 @@ Pizza.prototype.price = function (size, toppings) {
   }
 }
   return this.price;
-}
-
-Pizza.prototype.order = function () {
-  return this;
 }
