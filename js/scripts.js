@@ -1,16 +1,23 @@
 /*This file is for your custom js.  All yours*/
 
-// Calls input from form-input.html
+// Calls input from index.html on button click
 
 $(document).ready(function(){
 
-  $("#input").submit(function(event){
-    event.preventDefault();
-    var input = ($("#blank").val());
-
-    var output = "";
-
-    $('#output').text(output);
-
+  $("#order-now").click(function(){
+    debugger;
+    var newPizza = new Pizza()
+    var pizzaReceipt = newPizza.order();
+    $('#pizza-receipt').text(pizzaReceipt.size);
   });
 });
+
+// Business rules for ordering pizza
+
+var Pizza = function () {
+  this.size = "medium";
+}
+
+Pizza.prototype.order = function () {
+  return this;
+}
