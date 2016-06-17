@@ -1,8 +1,8 @@
-/*This file is for your custom css.  All yours*/
 input.size {
   visibility: hidden;
   position: absolute;
 }
+
 input.size {
   cursor:pointer;
   border:2px solid transparent;

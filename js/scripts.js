@@ -1,23 +1,16 @@
-/*This file is for your custom js.  All yours*/
-
-// Calls input from index.html on button click
-
 $(document).ready(function(){
-
   $("#order-now").click(function(){
-    var size = $("input[name=size]:checked").val();
+    var size = $("input[name=size]:checked").val()
     var toppings = $("input:checkbox:checked").map(function () {
-      return $(this).val();
-    }).get();
+      return $(this).val()
+    }).get()
     var newPizza = new Pizza(size, toppings)
     $('#pizza-receipt').show()
     $('#pizza-receipt-size').text(newPizza.size)
     $('#pizza-receipt-toppings').text(newPizza.toppings.join(' and '))
     $('#pizza-receipt-price').text(newPizza.price(size, toppings))
-    })
-  });
-
-// Business rules for ordering pizza
+  })
+});
 
 var Pizza = function (size, toppings, price) {
   this.size = size;
@@ -30,15 +23,15 @@ Pizza.prototype.price = function (size, toppings) {
     this.price = 20
   } else if (size === "medium") {
     this.price = 15
-  } else if (size === "small") {
+    } else if (size === "small") {
     this.price = 10
-  }
+    }
   for (i = 0; i <= toppings.length; i++) {
     if (toppings[i] === "pepperoni" || toppings[i] === "sausage" || toppings[i] === "anchovies") {
     this.price += 2
-  } else if (toppings[i] === "onion" || toppings[i] === "mushrooms") {
+    } else if (toppings[i] === "onion" || toppings[i] === "mushrooms") {
     this.price += 1
+      }
   }
-}
   return this.price;
 }
