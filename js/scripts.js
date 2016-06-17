@@ -11,9 +11,10 @@ $(document).ready(function(){
     }).get();
     var newPizza = new Pizza(size, toppings)
     var pizzaReceipt = newPizza.order();
-    $('#pizza-receipt').append("<p>" + pizzaReceipt.size + "</p>");
-    $('#pizza-receipt').append("<p>" + pizzaReceipt.toppings + "</p>");
-    $('#pizza-receipt').append("<p>" + pizzaReceipt.price(size, toppings) + "</p>");
+    $('#pizza-receipt').append("<p>Thank you for your order.</p><p>You selected a " + pizzaReceipt.size + " pizza with " + pizzaReceipt.toppings.join(' and ') + " for a grand total of $" + pizzaReceipt.price(size, toppings) + ".</p>")
+    // $('#pizza-receipt').append("<p>" + pizzaReceipt.size + "</p>");
+    // $('#pizza-receipt').append("<p>" + pizzaReceipt.toppings + "</p>");
+    // $('#pizza-receipt').append("<p>" + pizzaReceipt.price(size, toppings) + "</p>");
     })
   });
 
@@ -25,7 +26,6 @@ var Pizza = function (size, toppings, price) {
 }
 
 Pizza.prototype.price = function (size, toppings) {
-  debugger;
   if (size === "large") {
     this.price = 20
   } else if (size === "medium") {
@@ -34,7 +34,6 @@ Pizza.prototype.price = function (size, toppings) {
     this.price = 10
   }
   for (i = 0; i <= toppings.length; i++) {
-    debugger;
     if (toppings[i] === "pepperoni" || toppings[i] === "sausage" || toppings[i] === "anchovies") {
     this.price += 2
   } else if (toppings[i] === "onion" || toppings[i] === "mushrooms") {
