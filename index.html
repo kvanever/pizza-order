@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Web Development Template</title>
+    <title>Order a Pizza</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
 
     <!-- Bootstrap core CSS -->
@@ -36,7 +36,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Order a pizza using the form below</a>
+          <a class="navbar-brand" href="#">Order a Pizza</a>
         </div>
       </div>
     </nav>
@@ -45,7 +45,10 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <div class="order-button">
-          <button type="button" name="button" class="btn btn-success" id="order-now">Order Now!</button>
+            <p class="lead">
+              Please select a size and as many toppings from the form to the right and then submit your order.  All pizzas include cheese.
+            </p>
+          <button type="button" name="button" class="btn btn-success" id="order-now">Submit Your Order</button>
           </div>
           <div id="pizza-receipt">
             <p class="lead">Thank you for your order.</p>
@@ -89,31 +92,31 @@
               <div class="checkbox">
                 <label>
                   <input type="checkbox" class="topping" value="pepperoni">
-                  Pepperoni + $2
+                  Pepperoni: <strong>$2</strong>
                 </label>
               </div>
               <div class="checkbox">
                 <label>
                   <input type="checkbox" class="topping" value="onion">
-                  Onion + $1
+                  Onion <strong>$1</strong>
                 </label>
               </div>
               <div class="checkbox">
                 <label>
                   <input type="checkbox" class="topping" value="mushroom">
-                  Mushrooms + $1
+                  Mushrooms <strong>$1</strong>
                 </label>
               </div>
               <div class="checkbox">
                 <label>
                   <input type="checkbox" class="topping" value="sausage">
-                  Sausage + $2
+                  Sausage <strong>$2</strong>
                 </label>
               </div>
               <div class="checkbox">
                 <label>
                   <input type="checkbox" class="topping" value="anchovies">
-                  Anchovies + $2
+                  Anchovies <strong>$2</strong>
                 </label>
               </div>
             </div>

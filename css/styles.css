@@ -26,3 +26,8 @@ input.size:checked + h3 {
 #pizza-receipt-price {
   font-weight: bold;
 }
+
+.checkbox {
+  display: inline-block;
+  margin-right: 1em;
+}
