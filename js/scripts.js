@@ -15,14 +15,16 @@ $(document).ready(function(){
     var pizzaReceipt = newPizza.order();
     $('#pizza-receipt').append("<p>" + pizzaReceipt.size + "</p>");
     $('#pizza-receipt').append("<p>" + pizzaReceipt.toppings + "</p>");
+    $('#pizza-receipt').append("<p>" + pizzaReceipt.price + "</p>");
     })
   });
 
 // Business rules for ordering pizza
 
-var Pizza = function (size, toppings) {
+var Pizza = function (size, toppings, price) {
   this.size = size;
   this.toppings = toppings;
+  this.price = 15
 }
 
 Pizza.prototype.order = function () {
