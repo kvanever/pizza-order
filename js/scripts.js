@@ -5,17 +5,15 @@
 $(document).ready(function(){
 
   $("#order-now").click(function(){
-    debugger;
     var size = $("input[name=size]:checked").val();
     var toppings = $("input:checkbox:checked").map(function () {
       return $(this).val();
     }).get();
-    debugger;
     var newPizza = new Pizza(size, toppings)
     var pizzaReceipt = newPizza.order();
     $('#pizza-receipt').append("<p>" + pizzaReceipt.size + "</p>");
     $('#pizza-receipt').append("<p>" + pizzaReceipt.toppings + "</p>");
-    $('#pizza-receipt').append("<p>" + pizzaReceipt.price(size) + "</p>");
+    $('#pizza-receipt').append("<p>" + pizzaReceipt.price(size, toppings) + "</p>");
     })
   });
 
@@ -26,7 +24,7 @@ var Pizza = function (size, toppings, price) {
   this.toppings = toppings;
 }
 
-Pizza.prototype.price = function (size) {
+Pizza.prototype.price = function (size, toppings) {
   debugger;
   if (size === "large") {
     this.price = 20
@@ -35,6 +33,14 @@ Pizza.prototype.price = function (size) {
   } else if (size === "small") {
     this.price = 10
   }
+  for (i = 0; i <= toppings.length; i++) {
+    debugger;
+    if (toppings[i] === "pepperoni" || toppings[i] === "sausage" || toppings[i] === "anchovies") {
+    this.price += 2
+  } else if (toppings[i] === "onion" || toppings[i] === "mushrooms") {
+    this.price += 1
+  }
+}
   return this.price;
 }
 
