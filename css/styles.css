@@ -15,3 +15,14 @@ input.size:checked + h3 {
   border-radius: 6px;
   padding: .25em;
 }
+
+#pizza-receipt {
+  margin-top: 1em;
+  display: none;
+}
+
+#pizza-receipt-size,
+#pizza-receipt-toppings,
+#pizza-receipt-price {
+  font-weight: bold;
+}

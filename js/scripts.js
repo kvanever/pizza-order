@@ -10,8 +10,10 @@ $(document).ready(function(){
       return $(this).val();
     }).get();
     var newPizza = new Pizza(size, toppings)
-    $('#pizza-receipt').html("")
-    $('#pizza-receipt').append("<p>Thank you for your order.</p><p>You selected a " + newPizza.size + " pizza with " + newPizza.toppings.join(' and ') + " for a grand total of $" + newPizza.price(size, toppings) + ".</p>")
+    $('#pizza-receipt').show()
+    $('#pizza-receipt-size').text(newPizza.size)
+    $('#pizza-receipt-toppings').text(newPizza.toppings.join(' and '))
+    $('#pizza-receipt-price').text(newPizza.price(size, toppings))
     })
   });
 
